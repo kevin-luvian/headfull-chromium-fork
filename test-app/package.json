@@ -1,0 +1,20 @@
+{
+  "name": "test-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-spinner": "^0.2.10",
+    "playwright-core": "^1.30.0",
+    "playwright-extra": "^4.3.5",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "readline-sync": "^1.4.10",
+    "unzipper": "^0.10.11"
+  }
+}

@@ -1,0 +1,16 @@
+version: '3'
+
+# no ports exported
+services:
+  app:
+    platform: linux/amd64
+    container_name: scrapper
+    stdin_open: true 
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app # downloaded assets folders
+    ports:
+      - "5900:5900"
