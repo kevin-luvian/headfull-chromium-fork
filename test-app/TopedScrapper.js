@@ -30,7 +30,6 @@ const ensureDirectory = (dirPath) => {
     return true;
   }
   fs.mkdirSync(dirPath, { recursive: true });
-  ensureDirectory(dirPath);
 };
 
 const cleanDirectory = (dirPath) => {

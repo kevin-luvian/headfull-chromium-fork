@@ -1,5 +1,16 @@
 const fs = require("fs");
+const process = require("process")
 const TopedScrapper = require("./TopedScrapper");
+
+process.on('SIGTERM', function () {
+    console.log('SIGTERM');
+    process.exit(0);
+})
+
+process.on('SIGINT', function () {
+    console.log('SIGINT');
+    process.exit(0);
+})
 
 const ensureDirectory = (dirPath) => {
     if (fs.existsSync(dirPath)) {
@@ -23,19 +34,14 @@ const handleLogin = async (tScrapper) => {
     await tScrapper.fillLoginEmail();
     await tScrapper.delay();
     await tScrapper.fillLoginPassword();
-
     await tScrapper.delay();
-
     await tScrapper.clickSubmit();
 
     await tScrapper.delay();
 
     await tScrapper.clickOTPVerification();
-
     await tScrapper.delay(5);
-
     await tScrapper.fillManualOTPCode();
-
     await tScrapper.delay(15);
 };
 

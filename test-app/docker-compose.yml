@@ -2,7 +2,7 @@ version: '3'
 
 # no ports exported
 services:
-  app:
+  scrapper:
     platform: linux/amd64
     container_name: scrapper
     stdin_open: true 
@@ -12,5 +12,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app # downloaded assets folders
+      - /app/node_modules
     ports:
       - "5900:5900"
